@@ -7,19 +7,24 @@
 SpMatrixCalc(v, nPeriods)
 }
 \arguments{
-\item{v}{numeric vector with the seasonal periods corresponding to each point in the response series}
+\item{v}{positive numeric vector with the seasonal periods corresponding to each point in the response series.}
 
-\item{nPeriods}{numeric value representing the maximum value \code{v} can take on}
+\item{nPeriods}{positive numeric value representing the maximum value \code{v} can take on.}
 }
 \value{
-numeric matrix of Seasonal Similarities for the vector \code{v}
+numeric matrix of seasonal similarities for the vector \code{v}.
 }
 \description{
-Generates and returns an nxn matrix by calculating the Seasonal Dissimilarity
-(see \code{SeasonalAbsDissimilarity()}) for each possible pair of points in a vector
-of seasonal periods, then converts Dissimilarity matrix to a Similarity matrix using 1/(D_p +1).
+Generates and returns an n x n matrix by calculating the seasonal dissimilarity
+for each possible pair of points in a vector
+of seasonal periods, then converts dissimilarity matrix to a similarity matrix using 1 / (D_p + 1).
 }
 \examples{
-SpMatrixCalc(c(1,2,4),4)
-
+SpMatrixCalc(c(1, 2, 4), 4)
+}
+\seealso{
+\itemize{
+\item Trupiano (2021) arXiv:2112.06266 for information on the formulation of this seasonal similarity measure.
+\item \code{\link[=SeasonalAbsDissimilarity]{SeasonalAbsDissimilarity()}} for the function used to calculate seasonal dissimilarity.
+}
 }
